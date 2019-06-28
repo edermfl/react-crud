@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{ Component } from 'react';
+import './css/pure-min.css';
+import './css/side-menu.css';
+import AutorBox from './Autor';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+   
+    render(){
+        return (
+            <div id="layout">
+                <a href="#menu" id="menuLink" className="menu-link">
+                    <span></span>
+                </a>
+
+                <div id="menu">
+                    <div className="pure-menu">
+                        <span className="pure-menu-heading" href="#">Autores</span>
+
+                        <ul className="pure-menu-list">
+                            <li className="pure-menu-item"><span href="#" className="pure-menu-link">Home</span></li>
+                            <li className="pure-menu-item"><span href="#" className="pure-menu-link">Autor</span></li>
+                            <li className="pure-menu-item"><span href="#" className="pure-menu-link">Livro</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="main">
+                    <div className="header">
+                      <h1>Cadastro de Autores</h1>
+                    </div>
+                    <div className="content" id="content">
+                        <AutorBox/>    
+                    </div>
+                </div>            
+            </div>
+        );
+    }
 }
 
 export default App;
+
